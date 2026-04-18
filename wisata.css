@@ -1,0 +1,396 @@
+*{
+    margin: 0;                  /* Menghapus margin default browser dari semua elemen */
+    padding: 0;
+    box-sizing: border-box;     /* width sudah menghitung padding dan border */
+    text-decoration: none;      /* agar tidak terlihat garis bawah */
+    border: none;
+    font-family:'Poppins', sans-serif;
+}
+
+.home-img {
+    background-image: url(PICTURE/PIC\ \(8\).jpg);
+    display: flex;              /* untuk mengatur posisi elemen di dalam kontainer */
+    background-size: cover;     /* gambar menutupi area penuh tanpa ruang kosong. */
+    background-position: center;                            
+    align-items: center;        /* vertikal */
+    justify-content: center;    /* horizontal */
+    height: 600px;              /* tinggi px */
+    position: relative;         /* Menjadikan elemen sebagai acuan posisi untuk anak-anaknya yang absolute */
+}
+
+.background-judul {
+    position: absolute;         /* Menempatkan elemen secara bebas berdasarkan acuan dari parent yang relative */
+    inset: 0;                   /* Elemen menutupi seluruh area parent-nya */
+    background-color: rgba(0, 0, 0, 0.3);       /* hitam transparan */
+    z-index: 1;                 /* mengatur urutan lapisan (layer) */
+}
+
+.home-img h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;           /* tebal */
+    line-height: 1.3;           /* jarak antar line */
+    z-index: 2;                 /* lapisan */
+    text-align: center;
+}
+
+/* header */
+
+header {
+    position: fixed;                                /* header akan tetap terlihat saat pengguna scroll */
+    display: flex;             
+    background-color: rgba(0, 0, 0, 0.5);         /* transparan hitam (opastity) */
+    width: 100%;                                    /* Header mengambil seluruh lebar viewport */
+    z-index: 10;
+    justify-content: space-between;                 /* ditempatkan di ujung container */
+    padding-inline: 60px;                           /* padding kanan kiri */
+    padding-block: 20px;                            /* padding atas bawah */
+}
+
+a:visited {                     /* Kondisi link yang sudah pernah dikunjungi */
+    color: inherit;             /* Ikuti warna dari elemen induk */
+}
+
+.link {
+    display: flex;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3;
+    gap: 20px;                  /* jarak antara elemen <a> */
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    color: white !important;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* welcome */
+
+.welcome {
+    display: flex;              /* menyusun elemen secara horizontal */
+    align-items: center;
+    margin: 100px;
+    gap: 100px;
+}
+
+.welcome-img {
+    flex: 1.2;                  /* agar gambarnya terlihat lebih besar dari text */
+    width: 100%;
+}
+
+.welcome-img:hover img {
+  transform: scale(1.05) rotate(1deg);                /* ukuran dan kemiringan */
+  filter: brightness(100%);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);       /* bayangan X, Y, blur */
+}
+
+
+.welcome-img img {
+    display: flex;
+    width: 100%;
+    filter: brightness(95%);
+    border-radius: 30px;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;      /* animasi lembut */
+}
+
+.welcome-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 100%;
+}
+
+.welcome-text h1 {
+    display: flex;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.welcome-text p {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+/*about*/
+
+
+.about h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.sejarah-text h1 {
+    text-align: center;
+    margin-block: 20px;            /* atas bawah */
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.about-img {
+    display: flex;
+    justify-content: center;       /* horizontal */ 
+    width: 100%;
+    margin-top: 20px;
+}
+
+.about-img img:hover {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.about-img img {
+    width: 50%;
+    border-radius: 30px;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    filter: brightness(95%);
+}
+
+/* sejarah */
+
+.photo-sejarah {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+    justify-content: center;
+}
+
+.sejarah-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.sejarah-img:hover img {
+    transform: scale(1.05);
+    filter: brightness(100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sejarah-img img {
+    height: 400px;
+    width: 400px;
+    border-radius: 30px;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    filter: brightness(95%);
+}
+
+/* sejarah & about */ 
+
+.about-text, .sejarah-text {
+    text-align: center;        
+    max-width: 1100px;          /* lebar maksimal konten */
+    margin: auto;               /* Membuat elemen berada di tengah horizontal (kalau lebar elemen tidak 100%) */
+    padding: 40px;     
+}
+
+/* activities */
+
+.activities {
+    background-color: rgb(32, 32, 32);
+    color: white;
+    padding: 40px;
+    padding-bottom: 70px;
+    margin-top: 150px;
+}
+
+.activities h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.activities-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin: 70px;
+}
+
+.activities-text {
+    display: flex;
+    align-items: center;
+    align-items: stretch;
+    gap: 50px;
+}
+
+.activities-text img {
+    width: 450px;
+    height: 250px;
+    border-radius: 30px;
+    object-fit: cover;
+    filter: brightness(90%);   
+    flex-shrink: 0;     
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.activities-text:hover img {
+    transform: scale(1.05) rotate(1deg);
+    filter: brightness(100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: rgb(82, 82, 82);
+    border-radius: 30px;
+}
+
+/* reserve */
+
+
+.reserve {
+    padding: 70px;
+}
+
+.head h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Table Styling */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;                      /* Hilangkan jarak antar border */
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;                               /* agar terpotong menjadi radius yang diinginkan */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table th, .table td {
+    padding: 15px 20px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.table thead {
+    background-color: rgb(37, 94, 145);
+    color: white;
+    text-transform: uppercase;                      /* huruf diubah jadi kapital semua */
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s ease;         /* terdapat warna ketika kursor lewat */
+}
+
+.table tbody tr:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+/* others */
+
+.other {
+  text-align: center;
+  margin: 40px;
+  margin-bottom: 150px;
+}
+
+.other h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 30px;
+}
+
+.other-container {
+  display: flex;
+  justify-content: center; 
+  gap: 30px;                 
+}
+
+.other-item {                   /* teks dan gambar */
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.other-item:hover img {
+    transform: scale(1.05); 
+    filter: brightness(100%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.other-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    filter: brightness(90%);
+    transition:  0.6s ease, box-shadow 0.6s ease;
+}
+
+.other-item h2 {
+    padding-top: 20px;
+}
+
+/* Contact */
+
+.contact {
+    background-color: gainsboro;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  padding-top: 70px;
+  font-size: 30px;
+  position: relative;       /* Agar pseudo-elemen ::after nanti bisa diposisikan relatif terhadap container .social-icons ini. */
+}
+
+.social-icons::after {        /* membuat elemen garis di dalam .social-icons tanpa menambah elemen HTML baru. */
+    content: "";              /* agar pseudo-elemen muncul. */
+    position: absolute;       /* supaya garis bisa diposisikan secara bebas di dalam .social-icons.*/
+    align-items: center;
+    bottom: 0;                /* menempatkan garis di bagian bawah container ikon. */
+    width: 70%;                
+    height: 1px;
+    background-color: black;
+}
+
+.contact-text {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.contact-text h1 {
+    font-weight: 20px;
+    font-size: 1.2rem;
+}
+
+.gmail {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.gmail h2 {
+    font-size: 15px;
+    font-weight: 50;
+}
